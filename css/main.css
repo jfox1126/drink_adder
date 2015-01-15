@@ -1,6 +1,6 @@
 /*Reset Styling*/
 
-/*html, body, div, span, applet, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -19,6 +19,55 @@ time, mark, audio, video {
     box-sizing: border-box;
     font: inherit;
     font-size: 100%;
-    outline: solid 1px;
-}*/ 
+    /*outline: solid 1px;*/
+}
 
+.name-section {
+	text-align: center;
+	border: solid 1px;
+	padding: 1rem;
+}
+
+.ing-section {
+	position: relative;
+	left: 50%;
+	margin-left: -20rem;
+	text-align: center;
+	width: 40rem;
+	height: auto;
+	border: solid 1px;
+	padding: 1rem;
+}
+
+.ing-section > div {
+	padding: .5rem;
+	display: inline-block;
+}
+
+.ing-entry {
+	margin-left: 3rem;
+	float: left;
+}
+
+.instructions-section {
+	text-align: center;
+	padding: 1rem;
+	border: solid 1px;
+}
+
+.instructions-section > div {
+	display: inline-block;
+	padding: .5rem;
+}
+
+.type-section {
+	text-align: center;
+	padding: 1rem;
+	border: solid 1px;
+}
+
+.image-section {
+	text-align: center;
+	padding: 1rem;
+	border: solid 1px;
+}

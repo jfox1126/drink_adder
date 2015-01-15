@@ -2,18 +2,72 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<!--<link rel="shortcut icon" type="image/x-icon"  href="img/favicon.ico">-->
-	<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
-	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-	<!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 	<script language="JavaScript" type="text/javascript" src="js/app.js"></script>
-	<title>Document</title>
+	<title>Drink Adder</title>
 </head>
 
 <body>
-	
+	<div class="name-section">
+		<h1>Drink Name</h1>
+		<select name="Drink Name" id="drink-name">
+			<option value="Manhattan">Manhattan</option>
+			<option value="Martini">Martini</option>
+			<option value="Margarita">Margarita</option>
+		</select>
+	</div>
+
+	<div class="ing-section">
+		<h1>Ingredients</h1>
+		<div class="ing-name">
+			<h2>Name</h2>
+			<input type="text" class="ing-input" id="ing-name" placeholder="e.g. whiskey">
+		</div>
+		<div class="ing-qty">
+			<h2>Qty</h2>
+			<input type="number" class="ing-input" id="ing-qty" onkeypress='return event.charCode >= 48 && event.charCode <= 57'placeholder="e.g. 1.5">
+		</div>
+		<div class="ing-unit">
+			<h2>Unit</h2>
+			<input type="text" class="ing-input" id="ing-unit" placeholder="e.g. oz">
+		</div>
+		<ul id="ing-list"></ul>
+	</div>
+
+	<div class="instructions-section">
+		<h1>Instructions</h1>
+		<div class="function">
+			<h2>Instruction Function</h2>
+			<input type="text" class="inst-inputs" id="function-input" placeholder="e.g. combine">
+		</div>
+		<div class="instruction-inputs">
+			<h2>Inputs</h2>
+			<input type="text" class="inst-inputs" id="var1">
+			<input type="text" class="inst-inputs" id="var2">
+			<input type="text" class="inst-inputs" id="var3">
+			<input type="text" class="inst-inputs" id="var4">
+			<input type="text" class="inst-inputs" id="var5">
+		</div>
+		<ul id="inst-list"></ul>
+	</div>
+
+	<div class="type-section">
+		<h2>Drink Type</h2>
+		<select name="drink-type" id="drink-type">
+			<option value="Highball">Highball</option>
+			<option value="New Orleans Sour">New Orleans Sour</option>
+		</select>
+	</div>
+
+	<div class="image-section">
+		<h2>Image Url</h2>
+		<input type="text" id="image-url">
+	</div>
+
+	<div class="preview-section">
+		
+	</div>
 </body>
 </html>
