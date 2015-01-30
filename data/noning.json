@@ -1,0 +1,25 @@
+{
+	"ice" : 
+	[
+		"ice",
+		"cubed ice",
+		"crushed ice"
+	],
+	"containers" :
+	[
+		"cocktail",
+		"coupe",
+		"highball",
+		"shaker",
+		"punch bowl",
+		"hurricane",
+		"copper mug",
+		"champagne flute",
+		"wine glass",
+		"beer mug",
+		"shot glass",
+		"pint glass",
+		"mug",
+		"mixing glass"
+	]
+}

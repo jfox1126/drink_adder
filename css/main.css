@@ -29,14 +29,9 @@ time, mark, audio, video {
 }
 
 .ing-section {
-	position: relative;
-	left: 50%;
-	margin-left: -20rem;
 	text-align: center;
-	width: 40rem;
-	height: auto;
-	border: solid 1px;
 	padding: 1rem;
+	border: solid 1px;
 }
 
 .ing-section > div {
@@ -71,3 +66,33 @@ time, mark, audio, video {
 	padding: 1rem;
 	border: solid 1px;
 }
+
+td.details-control {
+    background: url('/resources/details_close.png') no-repeat center center;
+    cursor: pointer;
+}
+
+#previewSection {
+	position: relative;
+	left: auto;
+	right: auto;
+	width: 800px;
+	white-space: pre-wrap;
+}
+
+tr select,input {
+	width: 100%;
+}
+
+.validationText {
+	color: red;
+	font-weight: bold;
+	font-size: smaller
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+}
+

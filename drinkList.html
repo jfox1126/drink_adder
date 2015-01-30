@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
+
+	<link rel="stylesheet" type="text/css" href="http://bootswatch.com/cerulean/bootstrap.min.css">
+	<link rel='stylesheet' href='css/spectrum.css' />
+
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="jquery-ui-1.11.2/external/jquery/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" src="jquery-ui-1.11.2/jquery-ui.min.js"></script>
+
+	<script language="JavaScript" type="text/javascript" src="js/shared.js"></script>
+	<script language="JavaScript" type="text/javascript" src="js/drinkList.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+
+	<title>Drink List</title>
+</head>
+
+<body>
+	<div class="center" id="content" >
+		<div>
+			<h1>
+				Drink List
+			</h1>
+		</div>
+
+		<div style="margin: 30px">
+			<h4>Add New Drinks</h4>
+			<div>
+				<label for="newDrinkName">Drink Name:</label>
+				<input type="text" id="newDrinkName" style="width: 300px;">
+				<input id="createDrinkButton" type="submit" value="Create" style="width: 200px;"/>
+			</div>
+		</div>
+
+		<div>
+			<table id="drinkListTable"  class="display">
+				<thead>
+					<tr>
+						<th>Drink Id</th>
+						<th>Drink Name</th>
+						<th>Last Modified</th>
+						<th></th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

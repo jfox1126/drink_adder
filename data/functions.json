@@ -1,0 +1,141 @@
+[
+    {
+        "func": "peel",
+        "minvariables": 1,
+        "maxvariables": 1,
+        "required": ["solid"],
+        "outputs": "solid"
+    },
+    {
+        "func": "juice",
+        "minvariables": 1,
+        "maxvariables": 1,
+        "required": ["solid"],
+        "outputs": "mixer"
+    },
+    {
+        "func": "muddle",
+        "minvariables": 1,
+        "maxvariables": 100,
+        "required": ["container"],
+        "outputs": "composite"
+    },
+    {
+        "func": "puree",
+        "minvariables": 1,
+        "maxvariables": 100,
+        "required": ["solid"],
+        "outputs": "mixer"
+    },
+    {
+        "func": "zest",
+        "minvariables": 1,
+        "maxvariables": 1,
+        "required": ["solid"],
+        "outputs": "solid"
+    },
+    {
+        "func": "whisk",
+        "minvariables": 1,
+        "maxvariables": 1,
+        "required": []
+    },
+    {
+        "func": "combine",
+        "minvariables": 3,
+        "maxvariables": 100,
+        "required": ["container"],
+        "outputs": "composite"
+    },
+    {
+        "func": "add",
+        "minvariables": 2,
+        "maxvariables": 100,
+        "required": ["composite"],
+        "outputs": "composite"
+    },
+    {
+        "func": "blend",
+        "minvariables": 1,
+        "maxvariables": 1,
+        "required": ["composite"],
+        "outputs": "composite"
+    },
+    {
+        "func": "layer",
+        "minvariables": 2,
+        "maxvariables": 100,
+        "required": ["composite"],
+        "outputs": "composite"
+    },
+    {
+        "func": "top",
+        "minvariables": 2,
+        "maxvariables": 2,
+        "required": ["composite"],
+        "outputs": "composite"
+    },
+    {
+        "func": "combine_over_ice",
+        "minvariables": 3,
+        "maxvariables": 100,
+        "required": ["container, ice"],
+        "outputs": "composite"
+    },
+    {
+        "func": "stir",
+        "minvariables": 1,
+        "maxvariables": 1,
+        "required": ["composite"],
+        "outputs": "composite"
+    },
+    {
+        "func": "shake",
+        "minvariables": 1,
+        "maxvariables": 1,
+        "required": ["composite"],
+        "outputs": "composite"
+    },
+    {
+        "func": "pour_into",
+        "minvariables": 2,
+        "maxvariables": 2,
+        "required": ["composite, container"],
+        "outputs": "composite"
+    },
+    {
+        "func": "strain",
+        "minvariables": 2,
+        "maxvariables": 2,
+        "required": ["composite, container"],
+        "outputs": "composite"
+    },
+    {
+        "func": "fill_ice",
+        "minvariables": 2,
+        "maxvariables": 2,
+        "required": ["composite,ice"],
+        "outputs": "composite"
+    },
+    {
+        "func": "garnish",
+        "minvariables": 2,
+        "maxvariables": 10,
+        "required": ["composite"],
+        "outputs": "composite"
+    },
+    {
+        "func": "rub",
+        "minvariables": 2,
+        "maxvariables": 2,
+        "required": ["composite, solid"],
+        "outputs": "composite"
+    },
+    {
+        "func": "rim",
+        "minvariables": 2,
+        "maxvariables": 2,
+        "required": ["composite, solid"],
+        "outputs": "composite"
+    }
+]
