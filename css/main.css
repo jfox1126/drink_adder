@@ -80,8 +80,17 @@ td.details-control {
 	white-space: pre-wrap;
 }
 
-tr select,input {
+tr select,input[type="select"] {
 	width: 100%;
+}
+
+tr select,input[type="submit"] {
+	width: 100%;
+}
+
+#instructionPreview {
+	text-align: left;
+	padding-left: 100px;
 }
 
 .validationText {
@@ -96,3 +105,6 @@ tr select,input {
     width: 900px;
 }
 
+tfoot td.inputElement {
+	padding: 5px;
+}

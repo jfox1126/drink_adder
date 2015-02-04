@@ -4,138 +4,158 @@
         "minvariables": 1,
         "maxvariables": 1,
         "required": ["solid"],
-        "outputs": "solid"
+        "outputs": "solid",
+        "formats": ["Peel %s"]
     },
     {
         "func": "juice",
         "minvariables": 1,
         "maxvariables": 1,
         "required": ["solid"],
-        "outputs": "mixer"
+        "outputs": "mixer",
+        "formats": ["Juice %s"]
     },
     {
         "func": "muddle",
-        "minvariables": 1,
+        "minvariables": 2,
         "maxvariables": 100,
         "required": ["container"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Muddle $list in %s"]
     },
     {
         "func": "puree",
         "minvariables": 1,
         "maxvariables": 100,
-        "required": ["solid"],
-        "outputs": "mixer"
+        "required": [],
+        "outputs": "mixer",
+        "formats": ["Puree $list"]
     },
     {
         "func": "zest",
         "minvariables": 1,
         "maxvariables": 1,
         "required": ["solid"],
-        "outputs": "solid"
+        "outputs": "solid",
+        "formats": ["Zest %s"]
     },
     {
         "func": "whisk",
         "minvariables": 1,
-        "maxvariables": 1,
-        "required": []
+        "maxvariables": 100,
+        "required": [],
+        "formats": ["Whisk $list", "Whisk", "Whisk Mixture"]
     },
     {
         "func": "combine",
         "minvariables": 3,
         "maxvariables": 100,
         "required": ["container"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Combine $list in %s", "Combine $list"]
     },
     {
         "func": "add",
         "minvariables": 2,
         "maxvariables": 100,
         "required": ["composite"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Add $list to %s", "Add $list"]
     },
     {
         "func": "blend",
         "minvariables": 1,
         "maxvariables": 1,
         "required": ["composite"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Blend %s", "Blend mixture"]
     },
     {
         "func": "layer",
         "minvariables": 2,
         "maxvariables": 100,
         "required": ["composite"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Layer $list", "Layer %s on %s", "Layer %s on top of %s"]
     },
     {
         "func": "top",
         "minvariables": 2,
         "maxvariables": 2,
         "required": ["composite"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Top with %s", "Top %s with %s", "Top %s slowly and seductively ;)"]
     },
     {
         "func": "combine_over_ice",
-        "minvariables": 3,
+        "minvariables": 2,
         "maxvariables": 100,
         "required": ["container, ice"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Combine $list over ice in %s"]
     },
     {
         "func": "stir",
         "minvariables": 1,
         "maxvariables": 1,
         "required": ["composite"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Stir", "Stir %s"]
     },
     {
         "func": "shake",
         "minvariables": 1,
         "maxvariables": 1,
         "required": ["composite"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Shake", "Shake %s"]
     },
     {
         "func": "pour_into",
         "minvariables": 2,
         "maxvariables": 2,
         "required": ["composite, container"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Pour into %s", "Pour %s into %s"]
     },
     {
         "func": "strain",
         "minvariables": 2,
         "maxvariables": 2,
         "required": ["composite, container"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Strain into %s", "Strain %s into %s"]
     },
     {
         "func": "fill_ice",
         "minvariables": 2,
         "maxvariables": 2,
         "required": ["composite,ice"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Fill %s with ice", "Fill with ice", "Add ice", "Ice 'dat shit"]
     },
     {
         "func": "garnish",
         "minvariables": 2,
         "maxvariables": 10,
         "required": ["composite"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Garnish with $list", "Garnish %s with $list", "Use $list as garnish"]
     },
     {
         "func": "rub",
         "minvariables": 2,
         "maxvariables": 2,
         "required": ["composite, solid"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Rub with %s", "Rube %s with %s"]
     },
     {
         "func": "rim",
         "minvariables": 2,
         "maxvariables": 2,
         "required": ["composite, solid"],
-        "outputs": "composite"
+        "outputs": "composite",
+        "formats": ["Rim with %s", "Rim %s with %s"]
     }
 ]

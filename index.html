@@ -15,6 +15,11 @@
 	<script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 	<script language="JavaScript" type="text/javascript" src="jquery-ui-1.11.2/external/jquery/jquery.js"></script>
 	<script language="JavaScript" type="text/javascript" src="jquery-ui-1.11.2/jquery-ui.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
+	
+
+	<script language="JavaScript" type="text/javascript" src="js/shared.js"></script>
+	<script language="JavaScript" type="text/javascript" src="js/sprintf.js"></script>
 
 	<script language="JavaScript" type="text/javascript" src="js/app.js"></script>
 
@@ -29,13 +34,12 @@
 
 <body>
 	<div class="name-section">
-		<h1 id="drinkNameLabel">Drink</h1>
-		<!--<input type='text' id="custom" />-->
+		<h1 class="edit" id="drinkNameLabel">Drink</h1>
 		<input id="drinkSave" type="submit" value="Save Drink"/>
 	</div>
 
 	<div class="ing-section">
-			<h3>Ingredients</h3>
+		<h3>Ingredients</h3>
 		<div class="tableView">
 			<table id="ingredientTable" class="display" />
 			    <thead>
@@ -47,14 +51,21 @@
 			            <th>Id</th>
 			        </tr>
 			    </thead>
-			    <tbody>
+			    <tfoot>
 			    	<tr>
-			    		<td></td>
+			    		<td style='width: 20px;'></td>
 			            <td><select class="ing-input" id="ingredientSelect"></select></td>
 			            <td><input type="number" class="ing-input" id="ing-qty" placeholder="e.g. 1.5"></td>
 			            <td><select class="ing-input" id="unitSelect"></select></td>
 			            <td><input id="ing-add" type="submit" value="Add Ingredient"/></td>
 			    	</tr>
+			    	<tr>
+			    		<td style='width: 20px;'></td>
+			            <td colspan="4">ABC and some other texft which should cause it to wrap or something</td>
+			    	</tr>
+			    </tfoot>
+			    <tbody>
+			    	
 			    </tbody>
 			</table>
 		</div>
@@ -76,24 +87,40 @@
 			            <th>Ingredient 4</th>
 			            <th>Ingredient 5</th>
 			            <th>Ingredient 6</th>
+			            <th>Output Name</th>
 			            <th>Output Id</th>
 			        </tr>
 			    </thead>
 			    <tbody>
+			    </tbody>
+			    <tfoot>
+			    	<tr>
+			    		<td style='width: 20px;'></td>
+			    		<td style='padding:5px;'><select id="functionInput" ></select></td>
+			    		<td style='padding:5px;'> <span class='validationText' id='validation1'></span> <select type="text" class="inst-inputs" id="var1"></select></td>
+			    		<td style='padding:5px;'> <span class='validationText' id='validation2'></span> <select type="text" class="inst-inputs" id="var2"></select></td>
+			    		<td style='padding:5px;'> <span class='validationText' id='validation3'></span> <select type="text" class="inst-inputs" id="var3"></select></td>
+			    		<td style='padding:5px;'> <span class='validationText' id='validation4'></span> <select type="text" class="inst-inputs" id="var4"></select></td>
+			    		<td style='padding:5px;'> <span class='validationText' id='validation5'></span> <select type="text" class="inst-inputs" id="var5"></select></td>
+			    		<td style='padding:5px;'> <span class='validationText' id='validation6'></span> <select type="text" class="inst-inputs" id="var6"></select></td>
+			    		<td style='padding:5px;'></td>
+			            <td style='padding:5px;'> <span class='validationText'></span> <input id="instructionAdd" type="submit" value="Add Step"/></td>
+			    	</tr>
 			    	<tr>
 			    		<td></td>
-			    		<td><select id="functionInput" ></select></td>
-			    		<td> <span class='validationText' id='validation1'></span> <select type="text" class="inst-inputs" id="var1"></select></td>
-			    		<td> <span class='validationText' id='validation2'></span> <select type="text" class="inst-inputs" id="var2"></select></td>
-			    		<td> <span class='validationText' id='validation3'></span> <select type="text" class="inst-inputs" id="var3"></select></td>
-			    		<td> <span class='validationText' id='validation4'></span> <select type="text" class="inst-inputs" id="var4"></select></td>
-			    		<td> <span class='validationText' id='validation5'></span> <select type="text" class="inst-inputs" id="var5"></select></td>
-			    		<td> <span class='validationText' id='validation6'></span> <select type="text" class="inst-inputs" id="var6"></select></td>
-			            <td> <span class='validationText'></span> <input id="instructionAdd" type="submit" value="Add Step"/></td>
+			    		<td colspan="9">
+			    			<div id='instructionPreview'>
+			    			</div>
+			    		</td>
 			    	</tr>
-			    </tbody>
+			    </tfoot>
 		</table>
 	</div>
+	</div>
+
+	<div>
+		<table id="instructionsList">
+		</table>
 	</div>
 
 	<div>
