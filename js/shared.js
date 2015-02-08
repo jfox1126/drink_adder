@@ -24,21 +24,33 @@ function uploadDrink(name, id, ingredients, instructions, classification, url, s
 function formatListAsString(list) {
 	var result = "";
 	var l = list.length;
-	$.each(list, function(i, v) {
-		result += v;
-		if (i < l - 2)
-			result += ", "
-		else if (i == l - 2)
-			result += ", and ";
-	});
 
-	return result;
+	if (l == 1) {
+		return list[0];
+	} else if (l == 2) {
+		return list[0] + " and " + list[1];
+	} else {
+		$.each(list, function(i, v) {
+			result += v;
+			if (i < l - 2)
+				result += ", "
+			else if (i == l - 2)
+				result += ", and ";
+		});
+
+		return result;
+	}
 }
 
-function formatInstruction(selectedIngredients, formatString)
+function formatInstruction(selectedIngredients, formatString, instructionHint)
 {
 	var result = "";
-	var formatList = selectedIngredients;
+	var formatList = [];
+	$.each(selectedIngredients, function(k,v) {
+		if (v.length > 0)
+			formatList.push(v);
+	});
+	
 	var listIndex = formatString.indexOf("$list");
 	if (listIndex >= 0) {
 		var leftString = formatString.split("$list")[0];
@@ -55,24 +67,25 @@ function formatInstruction(selectedIngredients, formatString)
 		var leftCount = count(leftString);
 		var rightCount = count(rightString);
 
-		if (leftCount + 1 + rightCount > selectedIngredients.length)
+		if (leftCount + 1 + rightCount > formatList.length)
 			return "Invalid, Not enough ingredients";
 
 		// reset and build up our format list
-		formatList = [];
+		
 
 		leftList = [];
 		listList = [];
 		rightList = [];
-		$.each(selectedIngredients, function(i, v) {
+		$.each(formatList, function(i, v) {
 			if (i < leftCount)
 				leftList.push(v);
-			else if (i < selectedIngredients.length - rightCount)
+			else if (i < formatList.length - rightCount)
 				listList.push(v);
 			else
 				rightList.push(v)
 		});
 
+		formatList = [];
 		formatList = formatList.concat(leftList);
 		formatList.push(formatListAsString(listList));
 		formatList = formatList.concat(rightList);
@@ -82,20 +95,26 @@ function formatInstruction(selectedIngredients, formatString)
 
 	result = vsprintf(formatString, formatList);
 
+	result = result + instructionHint;
+
 	return result;
 }
 
-function formatInstructions(selectedIngredients, formatStrings) {
+function formatInstructions(selectedIngredients, formatStrings, instructionHint) {
 	var results = [];
 	$.each(formatStrings, function(k,v) {
-		var result = formatInstruction(selectedIngredients, v);
+		var result = formatInstruction(selectedIngredients, v, instructionHint);
 		results.push(result);
 	});
 
 	return results;
 }
 
-
+function cacheBuster() {
+	var date = new Date();
+	var time = date.getTime();
+	return "?cacheBuster=" + time;
+}
 
 
 
@@ -109,7 +128,7 @@ function formatInstructions(selectedIngredients, formatStrings) {
 var buildTree = function(drinkObj) {
 
 	$("#viz").html("");
-	
+
 	var allInstructions = drinkObj.instructions;
 	var allIngredients = drinkObj.ingredients;
 

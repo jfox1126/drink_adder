@@ -34,8 +34,9 @@
 
 <body>
 	<div class="name-section">
-		<h1 class="edit" id="drinkNameLabel">Drink</h1>
-		<input id="drinkSave" type="submit" value="Save Drink"/>
+		<h1 id="drinkNameLabel">Drink</h1>
+		<input id="drinkSave" type="submit" value="Save Drink" style="width:400px; display:block; margin-left:auto; margin-right:auto; margin-bottom:5px;"/>
+		<a href="./drinkList.html">Return to drink list</a>
 	</div>
 
 	<div class="ing-section">
@@ -59,10 +60,6 @@
 			            <td><select class="ing-input" id="unitSelect"></select></td>
 			            <td><input id="ing-add" type="submit" value="Add Ingredient"/></td>
 			    	</tr>
-			    	<tr>
-			    		<td style='width: 20px;'></td>
-			            <td colspan="4">ABC and some other texft which should cause it to wrap or something</td>
-			    	</tr>
 			    </tfoot>
 			    <tbody>
 			    	
@@ -76,51 +73,71 @@
 			Instructions
 		</h3>
 		<div>
-		<table id="instructionsTable" class="display">
-			<thead>
-			        <tr>
-			        	<th></th>
-			            <th>Function</th>
-			            <th>Ingredient 1</th>
-			            <th>Ingredient 2</th>
-			            <th>Ingredient 3</th>
-			            <th>Ingredient 4</th>
-			            <th>Ingredient 5</th>
-			            <th>Ingredient 6</th>
-			            <th>Output Name</th>
-			            <th>Output Id</th>
-			        </tr>
-			    </thead>
-			    <tbody>
-			    </tbody>
-			    <tfoot>
-			    	<tr>
-			    		<td style='width: 20px;'></td>
-			    		<td style='padding:5px;'><select id="functionInput" ></select></td>
-			    		<td style='padding:5px;'> <span class='validationText' id='validation1'></span> <select type="text" class="inst-inputs" id="var1"></select></td>
-			    		<td style='padding:5px;'> <span class='validationText' id='validation2'></span> <select type="text" class="inst-inputs" id="var2"></select></td>
-			    		<td style='padding:5px;'> <span class='validationText' id='validation3'></span> <select type="text" class="inst-inputs" id="var3"></select></td>
-			    		<td style='padding:5px;'> <span class='validationText' id='validation4'></span> <select type="text" class="inst-inputs" id="var4"></select></td>
-			    		<td style='padding:5px;'> <span class='validationText' id='validation5'></span> <select type="text" class="inst-inputs" id="var5"></select></td>
-			    		<td style='padding:5px;'> <span class='validationText' id='validation6'></span> <select type="text" class="inst-inputs" id="var6"></select></td>
-			    		<td style='padding:5px;'></td>
-			            <td style='padding:5px;'> <span class='validationText'></span> <input id="instructionAdd" type="submit" value="Add Step"/></td>
-			    	</tr>
-			    	<tr>
-			    		<td></td>
-			    		<td colspan="9">
-			    			<div id='instructionPreview'>
-			    			</div>
-			    		</td>
-			    	</tr>
-			    </tfoot>
-		</table>
-	</div>
+			<table class="display" id="instructionsTable" >
+				<thead>
+				        <tr>
+				        	<th></th>
+				            <th>Instruction</th>
+				            <th>Output Name</th>
+				            <th>Output Id</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				    </tbody>
+			</table>
+
+			<div>
+				<div id="instructionInputForm">
+					<label for="functionInput">Function: </label>
+					<select type="text" id="functionInput"></select>
+					<br />
+
+					<label for="var1">Input 1: </label>
+					<select type="text" class="inst-inputs" id="var1"></select>
+					<br />
+
+					<label for="var2">Input 2: </label>
+					<select type="text" class="inst-inputs" id="var2"></select>
+					<br />
+
+					<label for="var3">Input 3: </label>
+					<select type="text" class="inst-inputs" id="var3"></select>
+					<br />
+
+					<label for="var4">Input 4: </label>
+					<select type="text" class="inst-inputs" id="var4"></select>
+					<br />
+
+					<label for="var5">Input 5: </label>
+					<select type="text" class="inst-inputs" id="var5"></select>
+					<br />
+
+					<label for="var6">Input 6: </label>
+					<select type="text" class="inst-inputs" id="var6"></select>
+					<br />
+
+					<label for="instructionDescription">Description: </label>
+					<input id="instructionDescription" type="text" placeholder="Optional"/>
+					<br />
+
+					<input id="instructionAdd" type="submit" value="Add Instruction"/>
+				</div>
+
+				<div id="instructionPreview">
+				</div>
+
+			</div>
+		</div>
 	</div>
 
-	<div>
-		<table id="instructionsList">
-		</table>
+	<div class="image-section">
+		<h2>Image Url</h2>
+
+		<input type="text" id="image-url">
+		<input id="imageSave" type="submit" value="Save Image"/>
+		<div>
+			<img id="previewImage" height="250" style="margin: 10px;" border="5"></img>
+		</div>
 	</div>
 
 	<div>
@@ -128,7 +145,7 @@
 		</div>
 	</div>
 
-	<div class="type-section">
+	<div class="type-section" style="visibility: hidden;">
 		<h2>Drink Type</h2>
 		<select name="drink-type" id="drink-type">
 			<option value="Highball">Highball</option>
@@ -136,10 +153,6 @@
 		</select>
 	</div>
 
-	<div class="image-section">
-		<h2>Image Url</h2>
-		<input type="text" id="image-url">
-	</div>
 
 	<div class="preview-section">
 

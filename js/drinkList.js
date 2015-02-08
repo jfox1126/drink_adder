@@ -1,9 +1,6 @@
 $(document).ready(function() {
-
-	
-
 	var loadData = function() {
-		$.getJSON("data/drinksList.json", function(data) {
+		$.getJSON("data/drinksList.json" + cacheBuster(), function(data) {
 
 			$.each(data, function(k, v) {
 				v.editLink = "<a href='Index.html?drink=" + v.id + "' >Edit...</a>"

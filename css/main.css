@@ -67,6 +67,10 @@ time, mark, audio, video {
 	border: solid 1px;
 }
 
+.display tbody tr {
+    height: 50px; 
+}
+
 td.details-control {
     background: url('/resources/details_close.png') no-repeat center center;
     cursor: pointer;
@@ -107,4 +111,38 @@ tr select,input[type="submit"] {
 
 tfoot td.inputElement {
 	padding: 5px;
+}
+
+#instructionInputForm {
+	float:left;
+	padding: 5px;
+}
+
+#instructionInputForm label {
+	width: 100px;
+}
+
+#instructionInputForm select,input[type="text"]  {
+	width:300px;
+	margin:5px;
+}
+
+#instructionPreview {
+	padding: 5px;
+}
+
+#instructionInputForm input[type="submit"] {
+	margin: 10px;
+}
+
+.image-section input[type="submit"] {
+	width: 200px;
+}
+
+.image-section input[type="text"] {
+	width: 400px;
+}
+
+#previewImage {
+	border: 5;
 }

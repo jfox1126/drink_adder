@@ -1,1 +1,0 @@
-{"id":"whiskey_sour","name":"Whiskey Sour","ingredients":[{"name":"Whiskey","qty":"2","unit":"oz","id":"Whiskey_1"}],"instructions":[{"func":"add","id":"composite_1","ingredients":["Whiskey_1","ice_1"]}],"classification":"High Ball","imageUrl":"http://fake.com"}
